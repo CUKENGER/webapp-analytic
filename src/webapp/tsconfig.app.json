@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "moduleDetection": "force",
+    "useDefineForClassFields": true,
+    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": false,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "isolatedModules": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "declaration": false, // Отключаем генерацию .d.ts для Vite
+		"types": ["vite-plugin-svgr/client", "vitest/globals"],
+		"composite": true,
+		"declaration": true,
+    "declarationMap": true,
+		"tsBuildInfoFile": "./dist/tsconfig.app.tsbuildinfo"
+  },
+  "include": ["src/**/*", "svg.d.ts", "src/vite-env.d.ts", "src/__tests__/**/*", "src/test/**/*"],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

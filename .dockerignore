@@ -1,0 +1,34 @@
+# Исключение чувствительных данных
+.env
+.env.*
+env
+src/webapp/env
+
+# Исключение временных файлов и зависимостей
+node_modules
+src/webapp/node_modules
+npm-debug.log
+.DS_Store
+*.log
+
+# Исключение артефактов сборки
+build
+dist
+src/webapp/dist
+
+# Исключение инструментов разработки
+.git
+.vscode
+.idea
+*.test.*
+*.spec.*
+
+# Исключение ненужных конфигураций и скриптов
+Procfile
+app-nginx.conf.sigil
+start_all.sh
+README.md
+
+# Исключение линтеров (если не нужны в образе)
+eslint.config.js
+src/webapp/eslint.config.js

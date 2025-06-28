@@ -1,0 +1,19 @@
+.block-item--hover:hover {
+	background: linear-gradient(to right,
+			rgba(148, 163, 184, 0) 10%,
+			/* slate-400, прозрачный */
+			rgba(148, 163, 184, 0.05) 60%
+			/* slate-400, 5% */
+		);
+	transition: background 0.3s ease;
+	will-change: background;
+}
+
+.dark .block-item--hover:hover {
+	background: linear-gradient(to right,
+			rgba(100, 116, 139, 0) 10%,
+			/* slate-500, прозрачный */
+			rgba(100, 116, 139, 0.1) 60%
+			/* slate-500, 10% */
+		);
+}

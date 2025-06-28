@@ -1,0 +1,13 @@
+
+.headerContent {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: start;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1.2em;
+	gap: 8px;
+}

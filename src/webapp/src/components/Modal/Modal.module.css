@@ -1,0 +1,82 @@
+/* MyDropdownMenu.module.css */
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleFadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleFadeOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+/* Классы */
+.animateFadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.animateFadeOut {
+  animation: fadeOut 0.2s ease-in forwards;
+}
+
+.animateScaleFadeIn {
+  animation: scaleFadeIn 0.2s ease-out forwards;
+}
+
+.animateScaleFadeOut {
+  animation: scaleFadeOut 0.2s ease-out forwards;
+}
+
+.transformGpu {
+  transform: translateZ(0);
+}
+
+.transitionTransformOpacity {
+  transition-property: transform, opacity;
+}
+
+/* Дополнительные стили для компонента */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+}
+
+.chevronIcon {
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.chevronIconOpen {
+  transform: rotate(180deg);
+}

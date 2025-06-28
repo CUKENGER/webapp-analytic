@@ -1,0 +1,43 @@
+@import '../../../../index.css' layer(utilities);
+
+.headerContent {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: start;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1.2em;
+  gap: 8px;
+  height: 32px;
+}
+
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  @apply sticky-table-row;
+}
+
+.stickyHeader th {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 28px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.stickyHeader::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -16px;
+  right: -16px;
+  height: 1px;
+  background: var(--tg-border-color);
+  z-index: 11;
+}

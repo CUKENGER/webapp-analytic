@@ -1,0 +1,173 @@
+.tableContainer,
+.tableWideContainer {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  color: var(--tg-text-color);
+  font-size: 12px;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tableContainer {
+  margin-right: -16px;
+  margin-left: -16px;
+  padding-left: 16px;
+}
+
+.tableWideContainer {
+  margin: 0;
+  padding: 0;
+  border-radius: 16px;
+}
+
+.customTable {
+  border-collapse: collapse;
+  background: var(--tg-bg-color);
+  min-width: 100%;
+}
+
+/* Стили ячеек */
+.customTable th,
+.customTable td {
+  padding: 5.5px 8px 5.5px 10px;
+  border: 1px solid var(--tg-border-color);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  text-align: right;
+  overflow: hidden;
+}
+
+/* Заголовки */
+.customTable th {
+  background: var(--tg-bg-color);
+  white-space: nowrap;
+  height: 32px;
+}
+
+.customTable td {
+  height: 32px;
+  box-sizing: border-box;
+}
+
+/* Стили для заголовков */
+.customTable th {
+  z-index: 10;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.customTable thead {
+  position: relative;
+}
+
+.customTable tr:last-child {
+  position: relative;
+}
+
+.customTable tr:last-child {
+  position: relative;
+}
+
+.customTable thead::before,
+.customTable thead::after,
+.rightTablePadding::after,
+.rightTableCampaignsPadding::after,
+.leftTablePadding::after,
+.leftTableCampaignsPadding::after,
+.leftTableCampaignsPadding::before,
+.rightTableCampaignsPadding::before,
+.rightTablePadding::before,
+.leftTablePadding::before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  background: var(--tg-border-color);
+  width: 16px;
+}
+
+.customTable thead::before,
+.customTable thead::after {
+  bottom: 0;
+}
+
+.customTable thead::before {
+  left: -16px;
+}
+
+.customTable thead::after {
+  right: -16px;
+}
+
+.rightTablePadding::after {
+  bottom: 104px;
+}
+
+.leftTablePadding::after {
+  bottom: 104px;
+}
+
+.rightTablePadding::before {
+  bottom: 72px;
+}
+
+.leftTablePadding::before {
+  bottom: 72px;
+}
+
+.leftTableCampaignsPadding::after {
+  bottom: 104px;
+}
+
+.rightTableCampaignsPadding::after {
+  bottom: 104px;
+}
+
+.leftTableCampaignsPadding::before {
+  bottom: 72px;
+}
+
+.rightTableCampaignsPadding::before {
+  bottom: 72px;
+}
+
+/* Псевдоэлементы для последней строки */
+
+.hovered {
+  background-color: var(--tg-secondary-bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.leftTablePadding,
+.rightTablePadding,
+.leftTableCampaignsPadding,
+.rightTableCampaignsPadding {
+  box-sizing: border-box;
+  background-color: var(--tg-bg-color);
+  height: 100%;
+}
+
+/* Убираем внешние границы */
+.customTable th:first-child,
+.customTable td:first-child {
+  border-left: none;
+}
+
+.customTable th:last-child,
+.customTable td:last-child {
+  border-right: none;
+}
+
+.customTable tr:first-child th {
+  border-top: none;
+}
+
+.customTable tbody tr:first-child td {
+  border-top: none;
+}
+
+.customTable tr:last-child td {
+  border-bottom: none;
+  padding-bottom: 0;
+  padding-top: 0;
+}

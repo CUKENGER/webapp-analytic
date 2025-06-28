@@ -1,0 +1,8 @@
+{
+  "name": "telegraphyx-bot",
+  "scripts": {
+    "dokku": {
+      "predeploy": "cp /app/www/Procfile /app/ && cp /app/www/start_all.sh /app/ && chmod +x /app/start_all.sh"
+    }
+  }
+}

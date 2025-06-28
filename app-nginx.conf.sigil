@@ -1,0 +1,77 @@
+{{ if ne $.NGINX_WORKERS "" }}
+  worker_processes {{ $.NGINX_WORKERS }};
+{{ else }}
+  worker_processes 1;
+{{ end }}
+error_log stderr;
+pid nginx.pid;
+daemon off;
+
+events {
+  {{ if ne $.NGINX_WORKER_CONNECTIONS "" }}
+    worker_connections {{ $.NGINX_WORKER_CONNECTIONS }};
+  {{ else }}
+    worker_connections 768;
+  {{ end }}
+}
+
+http {
+  {{ if ne $.NGINX_CLIENT_BODY_TIMEOUT "" }}
+    client_body_timeout {{ $.NGINX_CLIENT_BODY_TIMEOUT }};
+  {{ else }}
+    client_body_timeout 5;
+  {{ end }}
+  types_hash_max_size 2048;
+  include mime.types;
+  charset UTF-8;
+
+  server {
+    listen {{ $.PORT }};
+    server_name  _;
+    {{ if ne $.NGINX_CLIENT_MAX_BODY_SIZE "" }}
+      client_max_body_size {{ $.NGINX_CLIENT_MAX_BODY_SIZE }}M;
+    {{ else }}
+      client_max_body_size 10M;
+    {{ end }}
+
+    location /api/ {
+        proxy_pass http://0.0.0.0:3141;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $http_connection;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Request-Start $msec;
+    }
+
+    {{ if ne $.NGINX_ROOT "" }}
+      root /app/www/{{ $.NGINX_ROOT }};
+    {{ else }}
+      root /app/www;
+    {{ end }}
+    index index.html;
+    port_in_redirect off;
+
+    location = /index.html {
+        {{ if ne $.NGINX_DEFAULT_REQUEST "" }}
+            try_files $uri $uri/ /{{ $.NGINX_DEFAULT_REQUEST }};
+            add_header Cache-Control "no-store, must-revalidate";
+            add_header Pragma "no-cache";
+            add_header Expires "0";
+        {{ else }}
+            try_files $uri $uri/ =404;
+        {{ end }}
+    }
+
+    location / {
+        {{ if ne $.NGINX_DEFAULT_REQUEST "" }}
+            try_files $uri $uri/ /{{ $.NGINX_DEFAULT_REQUEST }};
+        {{ else }}
+            try_files $uri $uri/ =404;
+        {{ end }}
+
+    }
+  }
+}

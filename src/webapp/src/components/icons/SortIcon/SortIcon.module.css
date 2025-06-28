@@ -1,0 +1,38 @@
+.sort-line {
+  transition: stroke-dasharray 0.1s ease-in-out, stroke-dashoffset 0.1s ease-in-out;
+}
+
+.sort-none .sort-line {
+  stroke-dasharray: 8;
+  stroke-dashoffset: 0;
+}
+
+.sort-asc .sort-line.top {
+  stroke-dasharray: 8;
+  stroke-dashoffset: 0;
+}
+
+.sort-asc .sort-line.middle {
+  stroke-dasharray: 6;
+  stroke-dashoffset: 0;
+}
+
+.sort-asc .sort-line.bottom {
+  stroke-dasharray: 4;
+  stroke-dashoffset: 0;
+}
+
+.sort-desc .sort-line.top {
+  stroke-dasharray: 4;
+  stroke-dashoffset: 0;
+}
+
+.sort-desc .sort-line.middle {
+  stroke-dasharray: 6;
+  stroke-dashoffset: 0;
+}
+
+.sort-desc .sort-line.bottom {
+  stroke-dasharray: 8;
+  stroke-dashoffset: 0;
+}

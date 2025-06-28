@@ -1,0 +1,71 @@
+.reportChartContainer {
+  overflow-x: hidden;
+  margin-right: -16px;
+  margin-left: -16px;
+  padding-left: 16px;
+  padding-right: 0;
+  border-radius: 0;
+}
+
+.reportChartWideContainer {
+  margin: 0;
+  overflow-x: hidden;
+	border-radius: 16px;
+}
+
+.reportChartInner,
+.reportChartWideInner {
+  display: flex;
+  gap: 0;
+  background-color: var(--tg-secondary-bg-color);
+}
+
+.reportChartInner {
+  /* min-width: calc(100% - 32px); */
+	min-width: 100%;
+}
+
+.reportChartWideInner {
+  min-width: 100%;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari */
+}
+
+.leftWork,
+.rightWork {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--tg-bg-color);
+}
+
+.rightWork {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.leftWork {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.tooltipWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 30;
+  overflow: visible;
+}
